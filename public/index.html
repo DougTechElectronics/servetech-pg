@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="database.js"> </script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   
+
+  </head>  
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ServeTech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="services.html#webdev">Web development</a></li>
+              <li><a class="dropdown-item" href="services.html#ITEQ">Suply of IT equipments</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="services.html#netsh">Networking Solutions</a></li>
+              <li><a class="dropdown-item" href="services.html#cyber">Cyber Security</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html">Store</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" mt-3>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/comm.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/pc.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/shop.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+    <div class="container"><div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            
+            <h5 class="card-title">Buy Products</h5>
+            <p class="card-text">Place your orders here.</p>
+            <button type="button" class="btn btn-outline-success">Oder here</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            
+            <h5 class="card-title">Work with Us</h5>
+            <p class="card-text">Feel free to contact our team.</p>
+            <a href="#" class="btn btn-outline-success">Contact here</a>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  
+
+  </section>
+
+ 
+
+
+
+
+<div class="card text-bg-dark">
+  <img src="..." class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h1 class="card-title">Our Services</h1>
+    <p class="card-text">explore our services</p>
+    
+  </div>
+</div>
+
+<section class="services">
+  <div class="container">
+      <div class="d-flex flex-column flex-md-row">
+          <!-- Left Column for Service List -->
+          <div class="services-list d-flex flex-column align-items-start order-1 order-md-1 col-md-6">
+              <div class="service-item p-3 mb-2 border-bottom">
+                  <i class="bi bi-database"></i>
+                  <h3>Website Development & Hosting</h3>
+                  <button type="button" class="btn btn-outline-success" data-service="1">More Info</button>
+              </div>
+
+              <div class="service-item p-3 mb-2 border-bottom">
+                  <i class="bi bi-pc-display"></i>
+                  <h3>Supply of ICT equipment & more.</h3>
+                  <button type="button" class="btn btn-outline-success" data-service="2">More Info</button>
+              </div>
+
+              <div class="service-item p-3 mb-2 border-bottom">
+                  <i class="bi bi-hdd-network"></i>
+                  <h3>Networking system Solutions etc.</h3>
+                  <button type="button" class="btn btn-outline-success" data-service="3">More Info</button>
+              </div>
+
+              <div class="service-item p-3 mb-2 border-bottom">
+                  <i class="bi bi-shield-fill-exclamation"></i>
+                  <h3>Cyber Security and CCTV system .</h3>
+                  <button type="button" class="btn btn-outline-success" data-service="4">More Info</button>
+              </div>
+          </div>
+
+          <!-- Right Column for Service Details and Booking Form -->
+          <div class="order-2 order-md-2 col-md-6">
+              <div class="service-details">
+                  <div class="service-details-content p-3">
+                      <h3 id="service-title"></h3>
+                      <p id="service-description"></p>
+                      <button type="button" class="btn btn-outline-danger" id="back-button">Back</button>
+                  </div>
+              </div>
+
+              <div class="service-booking show-icon">
+                  <i class="bi bi-info-circle service-icon"></i> <!-- Icon displayed initially -->
+                  <div class="form-content">
+                      <h4>Service Booking Form</h4>
+                      <form>
+                          <div class="mb-3">
+                              <label for="service-select" class="form-label">Select Service</label>
+                              <select class="form-select" id="service-select" required>
+                                  <option value="" disabled selected>Select a service</option>
+                                  <option value="1">Website Development & Hosting</option>
+                                  <option value="2">Supply of ICT equipment & more</option>
+                                  <option value="3">Networking system Solutions etc.</option>
+                                  <option value="4">Cyber Security and CCTV system</option>
+                              </select>
+                          </div>
+                          <div class="mb-3">
+                              <label for="name" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="name" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="email" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="email" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="phone" class="form-label">Phone</label>
+                              <input type="tel" class="form-control" id="phone" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="message" class="form-label">Message</label>
+                              <textarea class="form-control" id="message" rows="3" required></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+  </div>
+  <!-- Icon on the right side of the section -->
+</section>
+
+  
+
+<div class="container"><section class="horizontal-divider-section">
+  <hr class="horizontal-divider">
+</section></div>
+
+<body>
+  <div class="container mt-5">
+      <div class="row">
+          <div class="col-md-5 d-flex align-items-center">
+              <h1>Book Our Services</h1>
+          </div>
+          <div class="col-md-6 offset-md-1">
+              <form id="bookingForm" class="mt-4 mt-md-0">
+                  <div class="form-group">
+                      <label for="name">Name</label>
+                      <input id="name" class="form-control" type="text" name="name" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="email">E-mail</label>
+                      <input id="email" class="form-control" type="email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="service">Service</label>
+                      <input id="service" class="form-control" type="text" name="service" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit Booking</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+<div class="container-fluid"><section class="horizontal-divider-section">
+  <hr class="horizontal-divider">
+</section></div>
+
+
+
+
+<div class="container my-5">
+  <div class="card text-bg-dark">
+    <img src="..." class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h1 class="card-title">Our fetured products</h1>
+      <p class="card-text">explore our services</p>
+      
+    </div>
+  </div>
+  <div class="row">
+    <!-- Product Item 1 -->
+    <div class="col-md-4">
+      <div class="product-item">
+        <img src="images/com.jpg" style="height: 500px; width: 400px;" alt="Product 1">
+        <h5>Product 1</h5>
+        <p>k1000,000</p>
+      </div>
+    </div>
+    <!-- Product Item 2 -->
+    <div class="col-md-4">
+      <div class="product-item">
+        <img src="images/box.jpg" style="height: 500px; width: 410px" auto;alt="Product 2">
+        <h5>Product 2</h5>
+        <p>k500,000</p>
+      </div>
+    </div>
+    <!-- Product Item 3 -->
+    <div class="col-md-4">
+      <div class="product-item">
+        <img src="images/cab.jpg" style="height: 500px; width: 410px"  alt="Product 3">
+        <h5>Product 3</h5>
+        <p>k160, 000</p>
+      </div>
+    </div>
+  </div>
+  <div class="text-center btn-main-store">
+    <a href="https://www.yourstore.com" class="btn btn-outline-success">Visit Our Main Store</a>
+  </div>
+</div>
+<div class="container"><section class="horizontal-divider-section">
+  <hr class="horizontal-divider">
+</section></div>
+
+
+
+
+
+<section class="contact-us py-5">
+  <div class="container">
+      <h2 class="text-center mb-5">Contact Us</h2>
+      <div class="row">
+          <div class="col-lg-6">
+              <h4>Our Contact Details</h4>
+              <p><i class="bi bi-house-door"></i> <strong>Address:</strong> Juleka House, Area 4, Near Road Traffic, Lilongwe, Malawi</p>
+              <p><i class="bi bi-telephone"></i> <strong>Phone:</strong> +123 456 7890</p>
+              <p><i class="bi bi-envelope"></i> <strong>Email:</strong> contact@company.com</p>
+          </div>
+          <div class="col-lg-6">
+              <h4>Our Location</h4>
+              <div class="map-responsive">
+                  <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.419611893309!2d33.78328677672282!3d-13.973067476695953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1921d24054c9ba05%3A0x5e478e7c0f5e0a4f!2sJuleka%20House%2C%20Area%204%2C%20Lilongwe%2C%20Malawi!5e0!3m2!1sen!2sus!4v1690831119111!5m2!1sen!2sus"
+                      width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                      tabindex="0"></iframe>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<section class="footer">
+
+  <div class="footer">
+   <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Serve tech
+          </h6>
+          <p>
+            Welcome to our company where you will meet all your IT needs
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Laptops</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Desktop</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Harddrives</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Networking equipments</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Home</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Services</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">About</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Store</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Lilongwe, Malawi</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@ServeTech.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 265 980 11 8371</p>
+          <p><i class="fas fa-print me-3"></i> + 265 980 118 371</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Serve tech.tech</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+  </div>
+
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const serviceButtons = document.querySelectorAll('.btn-outline-success');
+      const serviceDetails = document.querySelector('.service-details');
+      const serviceTitle = document.getElementById('service-title');
+      const serviceDescription = document.getElementById('service-description');
+      const backButton = document.getElementById('back-button');
+      const serviceBooking = document.querySelector('.service-booking');
+      const serviceSelect = document.getElementById('service-select');
+      const serviceIcon = document.querySelector('.service-icon');
+      let scrollPosition = 0;
+
+      const serviceData = {
+          1: {
+              title: 'Website Development & Hosting',
+              description: 'Detailed information about Website Development & Hosting services.'
+          },
+          2: {
+              title: 'Supply of ICT equipment & more',
+              description: 'Detailed information about Supply of ICT equipment & more services.'
+          },
+          3: {
+              title: 'Networking system Solutions etc.',
+              description: 'Detailed information about Networking system Solutions etc. services.'
+          },
+          4: {
+              title: 'Cyber Security and CCTV system',
+              description: 'Detailed information about Cyber Security and CCTV system services.'
+          }
+      };
+
+      serviceButtons.forEach(button => {
+          button.addEventListener('click', (e) => {
+              // Capture the current scroll position
+              scrollPosition = window.scrollY;
+
+              const serviceId = e.target.getAttribute('data-service');
+              const service = serviceData[serviceId];
+              serviceTitle.textContent = service.title;
+              serviceDescription.textContent = service.description;
+              serviceDetails.classList.add('active');
+              serviceBooking.classList.add('active');
+              serviceIcon.style.display = 'none'; // Hide icon
+
+              // Scroll to the service details section
+              window.scrollTo({
+                  top: document.querySelector('.service-details').offsetTop,
+                  behavior: 'smooth'
+              });
+
+              // Set the service select dropdown to the current service
+              serviceSelect.value = serviceId;
+          });
+      });
+
+      backButton.addEventListener('click', () => {
+          serviceDetails.classList.remove('active');
+          serviceBooking.classList.remove('active');
+          serviceIcon.style.display = 'block'; // Show icon
+
+          // Scroll back to the previous position
+          window.scrollTo({
+              top: scrollPosition,
+              behavior: 'smooth'
+          });
+      });
+
+      // Handle dropdown changes to toggle icon visibility
+      serviceSelect.addEventListener('change', () => {
+          if (serviceSelect.value) {
+              serviceIcon.style.display = 'none'; // Hide icon when service is selected
+          }
+      });
+  });
+</script>
+
+<script>
+
+document.getElementById('bookingForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+  const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      service: formData.get('service')
+  };
+
+  fetch('/book-service', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+      alert(result.message);
+      event.target.reset();
+  })
+  .catch(error => {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again.');
+  });
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const serviceButtons = document.querySelectorAll('.service-item button');
+    const serviceTitle = document.getElementById('service-title');
+    const serviceDescription = document.getElementById('service-description');
+    const bookingForm = document.getElementById('bookingForm');
+    const backButton = document.getElementById('back-button');
+    const formContent = document.querySelector('.form-content');
+    const serviceBooking = document.querySelector('.service-booking');
+    const serviceIcon = document.querySelector('.service-icon');
+
+    serviceButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const serviceId = e.target.getAttribute('data-service');
+        
+        // Mock service data for demonstration (replace with actual API call)
+        const serviceData = {
+          1: { title: 'Website Development & Hosting', description: 'Detailed information about Website Development & Hosting services.' },
+          2: { title: 'Supply of ICT equipment & more', description: 'Detailed information about Supply of ICT equipment & more services.' },
+          3: { title: 'Networking system Solutions etc.', description: 'Detailed information about Networking system Solutions etc. services.' },
+          4: { title: 'Cyber Security and CCTV system', description: 'Detailed information about Cyber Security and CCTV system services.' }
+        };
+
+        const service = serviceData[serviceId];
+        serviceTitle.textContent = service.title;
+        serviceDescription.textContent = service.description;
+        formContent.style.display = 'none'; // Hide booking form initially
+        serviceBooking.classList.add('show-icon');
+        serviceIcon.style.display = 'none'; // Hide the icon
+
+        // Scroll to the service details section
+        window.scrollTo({
+          top: document.querySelector('.service-details').offsetTop,
+          behavior: 'smooth'
+        });
+
+        // Set the service select dropdown to the current service
+        document.getElementById('service-select').value = serviceId;
+      });
+    });
+
+    backButton.addEventListener('click', () => {
+      formContent.style.display = 'block'; // Show booking form
+      serviceBooking.classList.remove('show-icon');
+      serviceIcon.style.display = 'block'; // Show the icon
+    });
+
+    bookingForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(bookingForm);
+      const data = Object.fromEntries(formData.entries());
+
+      fetch('/submit-booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(result => {
+        alert(result.message);
+        bookingForm.reset(); // Clear the form
+        formContent.style.display = 'block';
+        serviceBooking.classList.remove('show-icon');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>

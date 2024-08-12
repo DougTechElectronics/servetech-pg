@@ -1,0 +1,187 @@
+@import 'https://fonts.googleapis.com/css?family=Libre+Franklin:100,300,400,600,700,900';
+
+
+.service-details,
+.service-booking {
+    display: none; /* Hide sections initially */
+}
+.service-details.active,
+.service-booking.active {
+    display: block; /* Show sections when active */
+}
+.service-booking {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    background: #f9f9f9;
+    position: relative;
+}
+.service-icon {
+    position: fixed; /* Fix icon to the right side */
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #007bff;
+    display: none; /* Hide icon initially */
+}
+.service-booking.show-icon .service-icon {
+    display: block; /* Show icon when no service is selected */
+}
+.service-booking .form-content {
+    margin-right: 3rem; /* Leave space for the icon */
+}
+@media (max-width: 767.98px) {
+    .service-details, .service-booking {
+        margin-top: 1rem; /* Add spacing on mobile */
+    }
+    .service-icon {
+        font-size: 1.5rem; /* Smaller icon on mobile */
+        right: 0.5rem;
+    }
+}
+
+/* -----------------------
+  Presentational stuff 
+----------------------- */
+body {
+  
+  background: dark;
+}
+
+h1 {
+  font-weight: 900;
+  color: primary;
+  @media (min-width: 1200px) {
+    font-size: 60px;
+  }
+}
+
+/* -----------------------
+  Form 
+----------------------- */
+.form-control {
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid hotpink;
+  &:focus {
+    box-shadow: none;
+    border-bottom: 1px solid grey;
+    color: green;
+  }
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+
+  > label {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: grey;
+    transform-origin: 0 0;
+    transform: scale(1.4);
+    pointer-events: none;
+    position: relative;
+    z-index: 5;
+    transition: transform .4s;
+  }
+
+  > input {
+    width: 100%;
+  }
+
+  &.not-empty > label {
+    transform: none;
+  }
+}
+
+
+.navbar-brand{
+    font-size: 80px;
+}
+.nav-link{
+    font-size: 30px;
+}
+#hero{
+    margin-top: 10px;
+}
+.row{
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+#carouselExampleSlidesOnly {
+    height: 600px; /* Set your desired height here */
+  }
+  #carouselExampleSlidesOnly .carousel-inner {
+    height: 100%; /* Ensure the inner carousel takes full height */
+  }
+  #carouselExampleSlidesOnly .carousel-item {
+    height: 100%; /* Ensure each item takes full height */
+  }
+  #carouselExampleSlidesOnly .carousel-item img {
+    height: 100%; /* Set images to take full height */
+    object-fit: cover; /* Ensure images cover the entire carousel item area */
+  }
+  i{
+    font-size: 75px;
+    align-self: center;
+  }
+  /* Styling for the horizontal divider section */
+.horizontal-divider-section {
+  text-align: center; /* Center the horizontal line */
+  margin: 30px 0; /* Adjust spacing above and below the line */
+}
+
+/* Styling for the horizontal line */
+.horizontal-divider {
+  border: 0;
+  height: 2px; /* Thickness of the line */
+  background-color: #000; /* Color of the line */
+  width: 100%; /* Full width of the container */
+}
+
+
+.hero-section {
+ 
+  background-size: cover;
+  color: black;
+  padding: 4rem 2rem;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.hero-section p {
+  font-size: 1.25rem;
+}
+.btn-custom {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+.btn-custom:hover {
+  background-color: #0056b3;
+}
+
+
+.card-img {
+  height: 600px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+}
+.card-img-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card-title {
+  font-size: 2.5rem; /* Increase title size */
+}
+.card-text {
+  font-size: 1.25rem; /* Increase text size */
+}
+

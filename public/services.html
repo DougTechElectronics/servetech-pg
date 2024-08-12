@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .response-message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .response-message.success {
+      color: green;
+    }
+    .response-message.error {
+      color: red;
+    }
+  </style>
+</head>  
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ServeTech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="services.html#webdev">Web development</a></li>
+              <li><a class="dropdown-item" href="services.html#ITEQ">Supply of IT equipment</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="services.html#netsh">Networking Solutions</a></li>
+              <li><a class="dropdown-item" href="services.html#cyber">Cyber Security</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html">Store</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="card text-bg-dark">
+    <img src="images/mu.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Our Services</h5>
+      <p class="card-text">Here is the list of our services.</p>
+    </div>
+  </div>
+
+  <div id="webdev">
+    <section class="hero-section text-center">
+      <div class="container">
+        <h1 class="display-4 mb-4">Web Designing and Hosting</h1>
+      </div>
+    </section>
+
+    <section class="services py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-briefcase"></i>
+              <h4 class="mt-3">Web Designing & Hosting</h4>
+              <p>We design websites tailored to your needs and host them for you.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-code-slash"></i>
+              <h4 class="mt-3">Website Maintenance</h4>
+              <p>We remake websites to give them a perfect look and the best experience for you.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-graph-up-arrow"></i>
+              <h4 class="mt-3">Database Management</h4>
+              <p>We design and manage databases for our clients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form for Web Development -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-5 d-flex align-items-center">
+          <h1>Book Our Web Development Services</h1>
+        </div>
+        <div class="col-md-6 offset-md-1">
+          <form id="webdevForm" class="mt-4 mt-md-0">
+            <div class="form-group">
+              <label for="webdevName">Name</label>
+              <input id="webdevName" class="form-control" type="text" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="webdevEmail">E-mail</label>
+              <input id="webdevEmail" class="form-control" type="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="webdevService">Service</label>
+              <input id="webdevService" class="form-control" type="text" name="service" required>
+            </div>
+            <div class="form-group">
+              <label for="webdevMessage">Enquiries</label>
+              <textarea id="webdevMessage" class="form-control" name="message" placeholder="Enquiries" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Booking</button>
+            <div id="webdevResponseMessage" class="response-message"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ITEQ">
+    <section class="hero-section text-center">
+      <div class="container">
+        <h1 class="display-4 mb-4">Supply of IT Equipment</h1>
+      </div>
+    </section>
+    <section class="services py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-briefcase"></i>
+              <h4 class="mt-3">Computers</h4>
+              <p>We supply different types of computers to our clients.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-router"></i>
+              <h4 class="mt-3">Networking Equipment</h4>
+              <p>We also supply different networking equipment for our clients.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-gear"></i>
+              <h4 class="mt-3">Any Other IT Equipment</h4>
+              <p>Contact us and let us know any specific equipment that you need.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form for IT Equipment -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-5 d-flex align-items-center">
+          <h1>Book Our IT Equipment Services</h1>
+        </div>
+        <div class="col-md-6 offset-md-1">
+          <form id="iteqForm" class="mt-4 mt-md-0">
+            <div class="form-group">
+              <label for="iteqName">Name</label>
+              <input id="iteqName" class="form-control" type="text" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="iteqEmail">E-mail</label>
+              <input id="iteqEmail" class="form-control" type="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="iteqService">Service</label>
+              <input id="iteqService" class="form-control" type="text" name="service" required>
+            </div>
+            <div class="form-group">
+              <label for="iteqMessage">Enquiries</label>
+              <textarea id="iteqMessage" class="form-control" name="message" placeholder="Enquiries" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Booking</button>
+            <div id="iteqResponseMessage" class="response-message"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="netsh">
+    <section class="hero-section text-center">
+      <div class="container">
+        <h1 class="display-4 mb-4">Networking Solutions</h1>
+      </div>
+    </section>
+    <section class="services py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-router"></i>
+              <h4 class="mt-3">Network Setup</h4>
+              <p>We set up networking solutions for various environments.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-shield"></i>
+              <h4 class="mt-3">Network Security</h4>
+              <p>We ensure the security of your network against threats.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-wifi"></i>
+              <h4 class="mt-3">Wireless Solutions</h4>
+              <p>We provide wireless networking solutions to meet your needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form for Networking Solutions -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-5 d-flex align-items-center">
+          <h1>Book Our Networking Solutions</h1>
+        </div>
+        <div class="col-md-6 offset-md-1">
+          <form id="netshForm" class="mt-4 mt-md-0">
+            <div class="form-group">
+              <label for="netshName">Name</label>
+              <input id="netshName" class="form-control" type="text" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="netshEmail">E-mail</label>
+              <input id="netshEmail" class="form-control" type="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="netshService">Service</label>
+              <input id="netshService" class="form-control" type="text" name="service" required>
+            </div>
+            <div class="form-group">
+              <label for="netshMessage">Enquiries</label>
+              <textarea id="netshMessage" class="form-control" name="message" placeholder="Enquiries" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Booking</button>
+            <div id="netshResponseMessage" class="response-message"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cyber">
+    <section class="hero-section text-center">
+      <div class="container">
+        <h1 class="display-4 mb-4">Cyber Security</h1>
+      </div>
+    </section>
+    <section class="services py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-lock"></i>
+              <h4 class="mt-3">Security Audits</h4>
+              <p>We perform thorough security audits to identify vulnerabilities.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-shield-check"></i>
+              <h4 class="mt-3">Threat Mitigation</h4>
+              <p>We provide solutions to mitigate potential threats.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-item">
+              <i class="bi bi-shield-exclamation"></i>
+              <h4 class="mt-3">Incident Response</h4>
+              <p>We offer rapid response to security incidents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form for Cyber Security -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-5 d-flex align-items-center">
+          <h1>Book Our Cyber Security Services</h1>
+        </div>
+        <div class="col-md-6 offset-md-1">
+          <form id="cyberForm" class="mt-4 mt-md-0">
+            <div class="form-group">
+              <label for="cyberName">Name</label>
+              <input id="cyberName" class="form-control" type="text" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="cyberEmail">E-mail</label>
+              <input id="cyberEmail" class="form-control" type="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="cyberService">Service</label>
+              <input id="cyberService" class="form-control" type="text" name="service" required>
+            </div>
+            <div class="form-group">
+              <label for="cyberMessage">Enquiries</label>
+              <textarea id="cyberMessage" class="form-control" name="message" placeholder="Enquiries" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Booking</button>
+            <div id="cyberResponseMessage" class="response-message"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Function to handle form submission
+      function handleFormSubmission(formId, responseId) {
+        const form = document.getElementById(formId);
+        const responseMessage = document.getElementById(responseId);
+
+        if (!form || !responseMessage) {
+          console.error(`Element with ID '${formId}' or '${responseId}' not found.`);
+          return;
+        }
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          const formData = new FormData(form);
+
+          fetch('http://localhost:3000/api/form_submissions', {
+            method: 'POST',
+            body: JSON.stringify({
+              name: formData.get('name'),
+              email: formData.get('email'),
+              service: formData.get('service'),
+              message: formData.get('message')
+            }),
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            responseMessage.textContent = data.message || 'Booking submitted successfully!';
+            responseMessage.classList.add('success');
+            responseMessage.classList.remove('error');
+            form.reset(); // Reset the form after submission
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            responseMessage.textContent = 'Error submitting the form. Please try again.';
+            responseMessage.classList.add('error');
+            responseMessage.classList.remove('success');
+          });
+        });
+      }
+
+      // Initialize form handlers
+      handleFormSubmission('webdevForm', 'webdevResponseMessage');
+      handleFormSubmission('iteqForm', 'iteqResponseMessage');
+      handleFormSubmission('netshForm', 'netshResponseMessage');
+      handleFormSubmission('cyberForm', 'cyberResponseMessage');
+    });
+  </script>
+
+</body>
+</html>

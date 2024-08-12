@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/all.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ServeTech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="services.html#webdev">Web development</a></li>
+              <li><a class="dropdown-item" href="services.html#ITEQ">Supply of IT equipment</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="services.html#netsh">Networking Solutions</a></li>
+              <li><a class="dropdown-item" href="services.html#cyber">Cyber Security</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="store.html">Store</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-light" id="loginRegisterBtn">Login/Register</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Registration and Login Modal -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="authModalLabel">Login / Register</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs" id="authTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="authTabContent">
+            <!-- Login Form -->
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="loginUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="loginUsername" required>
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+            </div>
+            <!-- Register Form -->
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+              <form id="registerForm">
+                <div class="mb-3">
+                  <label for="registerUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="registerUsername" required>
+                </div>
+                <div class="mb-3">
+                  <label for="registerPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="registerPassword" required>
+                </div>
+                <div class="mb-3">
+                  <label for="registerEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="registerEmail" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="card text-bg-dark">
+    <img src="images/shop.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h1>Welcome to ICT Equipment Store</h1>
+      <p>Your one-stop shop for all your ICT needs</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="horizontal-divider-section">
+      <hr class="horizontal-divider">
+    </section>
+  </div>
+
+  <!-- Categories Sections -->
+  <section class="container category-section">
+    <h2 class="text-center mb-4">Our Categories</h2>
+
+    <!-- Laptops -->
+    <div class="row mb-4" id="laptop-category">
+      <div class="col-12">
+        <h3>Laptops</h3>
+        <p>Discover our range of laptops for every need, from basic office work to high-performance gaming.</p>
+      </div>
+      <div id="laptops" class="row">
+        <!-- Laptop products will be dynamically loaded here -->
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="horizontal-divider-section">
+        <hr class="horizontal-divider">
+      </section>
+    </div>
+
+    <!-- Desktops -->
+    <div class="row mb-4" id="desktop-category">
+      <div class="col-12">
+        <h3>Desktops</h3>
+        <p>Explore our selection of desktops for all types of computing tasks, from casual use to intense workloads.</p>
+      </div>
+      <div id="desktops" class="row">
+        <!-- Desktop products will be dynamically loaded here -->
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="horizontal-divider-section">
+        <hr class="horizontal-divider">
+      </section>
+    </div>
+
+    <!-- Hard Drives -->
+    <div class="row mb-4" id="harddrive-category">
+      <div class="col-12">
+        <h3>Hard Drives</h3>
+        <p>Find the perfect hard drive for storage, backup, and data management.</p>
+      </div>
+      <div id="harddrives" class="row">
+        <!-- Hard Drive products will be dynamically loaded here -->
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="horizontal-divider-section">
+        <hr class="horizontal-divider">
+      </section>
+    </div>
+
+    <!-- Network Equipment -->
+    <div class="row mb-4" id="network-category">
+      <div class="col-12">
+        <h3>Network Equipment</h3>
+        <p>Check out our range of network equipment for reliable and fast connectivity solutions.</p>
+      </div>
+      <div id="network" class="row">
+        <!-- Network products will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="footer">
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Right -->
+        <div>
+          <a href="" class="me-4 text-reset">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="bi bi-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="bi bi-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+      </section>
+      <!-- Section: Social media -->
+      <section class="p-4">
+        <div class="container text-center text-md-start">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Company name
+              </h6>
+              <p>
+                Here you can use rows and columns here to organize your footer content.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, optio!
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Products
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">Product 1</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Product 2</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Product 3</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Product 4</a>
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Useful links
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">Pricing</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Settings</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Orders</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Help</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </section>
+
+  <!-- JavaScript Code -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Function to fetch products from the API
+      const fetchProducts = async () => {
+        try {
+          const response = await fetch('/api/products');
+          const products = await response.json();
+          // Sort products into categories
+          products.forEach(product => {
+            const productElement = `
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                  <div class="card-body">
+                    <h5 class="card-title">${product.name}</h5>
+                    <p class="card-text">${product.description}</p>
+                    <p class="card-text"><strong>$${product.price}</strong></p>
+                    <button class="btn btn-primary book-btn" data-product-id="${product.id}">Book</button>
+                  </div>
+                </div>
+              </div>`;
+            const categoryDiv = document.getElementById(product.category.toLowerCase() + 's');
+            if (categoryDiv) {
+              categoryDiv.innerHTML += productElement;
+            }
+          });
+        } catch (error) {
+          console.error('Error fetching products:', error);
+        }
+      };
+
+      fetchProducts();
+
+      // Handle opening the modal
+      document.getElementById('loginRegisterBtn').addEventListener('click', () => {
+        const authModal = new bootstrap.Modal(document.getElementById('authModal'));
+        authModal.show();
+      });
+
+      // Handle booking
+      document.addEventListener('click', async (event) => {
+        if (event.target.classList.contains('book-btn')) {
+          const productId = event.target.getAttribute('data-product-id');
+          const token = localStorage.getItem('token');
+          if (!token) {
+            alert('You must be logged in to book a product.');
+            return;
+          }
+          try {
+            const response = await fetch('/api/bookings', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+              },
+              body: JSON.stringify({ productId })
+            });
+            const message = await response.text();
+            alert(message);
+          } catch (error) {
+            alert('Error booking product: ' + error.message);
+          }
+        }
+      });
+
+      // Handle registration
+      document.getElementById('registerForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const username = document.getElementById('registerUsername').value;
+        const password = document.getElementById('registerPassword').value;
+        const email = document.getElementById('registerEmail').value;
+        try {
+          const response = await fetch('/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password, email })
+          });
+          const message = await response.text();
+          alert(message);
+          if (response.ok) {
+            const authModal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
+            authModal.hide();
+          }
+        } catch (error) {
+          alert('Error registering user: ' + error.message);
+        }
+      });
+
+      // Handle login
+      document.getElementById('loginForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+        try {
+          const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+          });
+          const data = await response.json();
+          if (response.ok) {
+            localStorage.setItem('token', data.token);
+            const authModal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
+            authModal.hide();
+            alert('Login successful!');
+          } else {
+            alert(data.message);
+          }
+        } catch (error) {
+          alert('Error logging in: ' + error.message);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

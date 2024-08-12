@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Bookings</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Service Bookings</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Service</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody id="bookingsTable">
+        <!-- Bookings will be inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('/bookings')
+        .then(response => response.json())
+        .then(bookings => {
+          const tableBody = document.getElementById('bookingsTable');
+          bookings.forEach(booking => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${booking.name}</td>
+              <td>${booking.email}</td>
+              <td>${booking.service}</td>
+              <td>${booking.timestamp}</td>
+            `;
+            tableBody.appendChild(row);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching bookings:', error);
+        });
+    });
+  </script>
+</body>
+</html>
